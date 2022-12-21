@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>리디렉트</title>
+  </head>
+  <body onload="document.forms[0].submit()">
+    <form action="/process_redirect" method="POST">
+      <input type="hidden" name="data" value="보내고 싶은 메시지" />
+      <input type="submit" value="Continue" />
+    </form>
+  </body>
+</html>
