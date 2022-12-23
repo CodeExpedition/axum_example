@@ -27,7 +27,11 @@ async fn cookie_handler(cookies: Cookies) -> impl IntoResponse {
         }
         None => {
             println!("you are the first visitting now!! welcome");
-            cookies.add(Cookie::new("VISIT", "TRUE"));
+            let cookie = Cookie::build("VISIT", "TRUE")
+                .path("/")
+                .http_only(true)
+                .finish();
+            cookies.add(cookie);
             response_html = Html("<html><body>첫방문</body></html>")
         }
     }
